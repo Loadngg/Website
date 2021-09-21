@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
+    text-align: center;
 }
 
 /*Header*/
@@ -158,4 +159,28 @@ h1, h2, h3, h4, h5, h6 {
 .btn:hover {
     background-color: #eaf3ff;
     color: #333;
+}
+
+.info {
+    height: 400px;
+    margin-top: 25px;
+}
+
+.info__title {
+    padding-bottom: 25px;
+}
+
+.blocks {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.block {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    margin: 0 20px;
+    background-color: #ffa805;
+    height: 150px;
 }
