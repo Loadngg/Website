@@ -100,9 +100,12 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    position: relative;
-
-    background: #345785;
+    position: relative;    
+    
+    background: url("../img/Sea.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(52,87,133, .4);
 }
 
 .intro__inner {
@@ -164,21 +167,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Info */
 .info {
+    position: relative;
     height: auto;
     margin: 25px 0;
 }
 
-.info__inner::after {
-    display: block;
-    content: "";
-    height: 3px;
-    background-color: #345785;
-    width: 10px;
-    transform: rotate(45deg);
-}
-
-.info__title {
-    padding-bottom: 20px;
+.blocks__uptitle {
+    padding-bottom: 10px;
 }
 
 .blocks {
@@ -191,20 +186,29 @@ h1, h2, h3, h4, h5, h6 {
     width: 30%;
     display: inline-block;
     margin: 0 20px;
-    background-color: #425d81;
+    background-color: #4c6c96;
     height: auto;
     text-align: left;
     padding: 0 20px 20px;
     color: #eaf3ff;
 }
 
-.info-title {
+.info__title {
     font-size: 15px;
     font-weight: 700;
 }
 
-.info-subtitle {
+.info__subtitle {
     font-size: 18px;
     font-weight: 300;
     font-style: italic;
+}
+
+.carusel {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 10px 5px;
+    height: 20px;
+    opacity: .7;
 }
