@@ -16,26 +16,26 @@
         <div class="header__inner">
             <div class="header__logo">Title</div>
 
-            <nav class="nav">
-                <a href="" class="nav__link">Loren</a>
-                <a href="" class="nav__link">Loren</a>
-                <a href="" class="nav__link">Loren</a>
-                <a href="" class="nav__link">Loren</a>
-                <a href="" class="nav__link">Loren</a>
+            <nav class="nav" id="nav">
+                <a href="#bestsellers" class="nav__link">Лучшие Предложения</a>
+                <a href="#photos" class="nav__link" id="nav_2">Фотографии</a>
+                <a href="#tours" class="nav__link" id="nav_3">Туры</a>
+                <a href="#map" class="nav__link" id="nav_4">Мы на карте</a>
+                <a href="#contacts" class="nav__link" id="nav_5">Контакты</a>
             </nav>
         </div>
     </div>
 </header>
 
 <div class="page">
-<!--    Intro-->
+    <!--    Intro-->
     <div class="intro">
         <div class="container">
             <div class="intro__inner">
-                <h2 class="intro__uptitle">Loren ipsum</h2>
-                <h1 class="intro__title">Loren ipsum</h1>
+                <h2 class="intro__uptitle">Турагенство</h2>
+                <h1 class="intro__title">Lorem ipsum</h1>
 
-                <a href="" class="btn">Learn more</a>
+                <a href="#bestsellers" class="btn">Узнать больше</a>
 
             </div>
         </div>
@@ -45,7 +45,7 @@
     <div class="info">
         <div class="container">
             <div class="info_inner">
-                <h2 class="blocks__uptitle">Лучшие предложения</h2>
+                <h2 class="blocks__uptitle" id="bestsellers">Лучшие предложения</h2>
 
                 <div class="blocks">
                     <div class="block">
@@ -71,7 +71,8 @@
         </div>
     </div>
 
-    <div class="photos">
+    <!-- Photos -->
+    <div class="photos" id="photos">
         <div class="container">
             <div class="photos__inner">
                 <div class="photos__block">
@@ -94,24 +95,77 @@
         </div>
     </div>
 
-    <div class="places">
+    <!-- Tours -->
+    <div class="tours" id="tours">
         <div class="container">
-            <div class="places__inner">
-                
+            <div class="tours__header">
+                <h3 class="tours__uptutle">Наши туры</h3>
+                <h2 class="tours__tutle">Идеальный отдых на курортах</h2>
+                <p class="tours__text">Гид по отдыху</p>
+            </div>
+
+            <div class="tours__block">
+
+                <img src="assets/img/tours.jpg" alt="" class="tours__photo">
+
+    
+                <div class="accordion" id="accordion">
+                    <div class="accordion__item active">
+                        <div class="accordion__header">
+                            <img src="assets/svg/plane-departure-solid.svg" alt="" class="header__ico">
+                            <div class="accordion__title">Турция</div>
+                        </div>
+                        <div class="accordion__content" >
+                            <p>Турция – это страна, в которой мечтают провести свой отдых миллионы жителей нашей планеты. Для кого-то эта мечта воплощается в реальность, кому-то везет меньше, но факт остается фактом: Турция – это рай на земле. Турция - страна неповторимого гостеприимства и искренних добрых людей.</p>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <div class="accordion__header">
+                            <img src="assets/svg/caret-up-solid.svg" alt="" class="header__ico">
+                            <div class="accordion__title">Египет</div>
+                        </div>
+                        <div class="accordion__content">
+                            <p>Достоинства Египта известны каждому: качественный пляжный отдых круглый год на Средиземном и Красном морях, разнообразная «экскурсионка»: Сфинкс и Луксор. Египет наиболее знаменит, как колыбель древней египетской цивилизации с ее храмами, иероглифами, мумиями и виднеющимися отовсюду пирамидами.</p>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <div class="accordion__header">
+                            <img src="assets/svg/coffee-solid.svg" alt="" class="header__ico">
+                            <div class="accordion__title">Греция</div>
+                        </div>
+                        <div class="accordion__content">
+                            <p>Греция — страна, где древности на каждом шагу: Афины, Дельфы, Фивы и Метеоры, скальные монастыри и святая гора Афон. Еще здесь классные пляжи, чистое море, а также живописные острова. Греция является музеем под открытым небом. Даже в самых небольших деревнях Греции можно найти развалины древней крепости или фрагменты античных храмов.</p>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <div class="accordion__header">
+                            <img src="assets/svg/water-solid.svg" alt="" class="header__ico">
+                            <div class="accordion__title">Мальдивы</div>
+                        </div>
+                        <div class="accordion__content">
+                            <p>Мальдивские острова — это россыпь живописных атоллов в теплых водах Индийского океана. Здесь все располагает к блаженству: километры уединенных пляжей, высококлассные отели и очень красивая природа.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="map">
+    <!-- Map -->
+    <div class="map" id="map">
         <div class="container">
             <div class="map__inner">
-                <img src="" alt="" class="map__ico">                
-                <div class="map__title"></div>
+                <a href="https://yandex.ru/maps/-/CCUqYBhc9C" class="map__link">
+                    <img src="assets/svg/map-marked-alt-solid.svg" alt="" class="map__ico">          
+                    <div class="map__title">Мы на карте</div>
+                </a>
             </div>
         </div>
     </div>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" id="contacts">
         <div class="container">
             <div class="footer__inner">
                 <div class="footer__left">
@@ -129,5 +183,7 @@
 
 </div>
 
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
