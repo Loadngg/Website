@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
 
     font-size: 15px;
     line-height: 1.6;
@@ -18,6 +19,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+p {
+    margin: 0;
+}
+
 /*Container*/
 .container {
     width: 100%;
@@ -25,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 15px;
     margin: 0 auto;
     text-align: center;
+    height: auto;
 }
 
 /*Header*/
@@ -192,7 +198,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #4c6c96;
     height: auto;
     text-align: left;
-    padding: 0 20px 20px;
+    padding: 20px;
     color: #eaf3ff;
 }
 
@@ -200,12 +206,13 @@ h1, h2, h3, h4, h5, h6 {
 .info {
     position: relative;
     height: auto;
-    margin: 40px 0 60px;
+    margin: 40px 0;
 }
 
 .info__title {
     font-size: 15px;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .info__subtitle {
@@ -224,25 +231,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Photos */
+.photos {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
 .place__photo {
     width: 100%;
-    max-width: inherit;
     height: 270px;
 }
 
 .photos__inner {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    left: 0;
-    /* height: 540px; */
-    height: auto;
-}
-
-.photos__block {
-    width: 25%;
-    height: inherit;
+    display: inline-grid;
+    grid-auto-flow: column;
 }
 
 .place__photo:nth-child(even) {
@@ -250,30 +254,20 @@ h1, h2, h3, h4, h5, h6 {
     top: -7px;
 }
 
-.photos {
-    display: inline-block;
-    width: 100%;
+.photos__block {
     height: 540px;
-    margin: 0 0 10px 0;
 }
 
 /* tours */
 .tours {
+    position: relative;
     width: 100%;
-    height: 590px;
-}
-
-.tours__header {
-    margin-top: 40px;
-}
-
-.tours__text {
-    margin-top: 0;
+    height: auto;
+    margin-bottom: 60px;
 }
 
 .tours__block {
     width: 100%;
-    margin-top: 40px;
     display: flex;
     justify-content: space-around;
 }
@@ -283,6 +277,22 @@ h1, h2, h3, h4, h5, h6 {
     height: 440px;
     display: block;
     margin-right: 5px;
+    border-radius: 10px;
+}
+
+.tours__header {
+    margin-bottom: 40px;
+}
+
+.tours__header::after,
+.tours__header::before {
+    content: "";
+    height: 4px;
+    width: 100px;
+    background-color: #4c6c96;
+    display: block;
+    margin: 15px auto;
+    transition: background-color .1s linear;
 }
 
 
@@ -306,11 +316,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px 20px 15px;
     position: relative;
 
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
     cursor: pointer;
 
-    background-color: #f5be58;
-    border-radius: 10px;
+    /* background-color: #c7daf0; */
+    /* border-radius: 10px; */
 
     align-items: center;
 }
@@ -318,7 +328,6 @@ h1, h2, h3, h4, h5, h6 {
 .accordion__title {
     font-weight: 700;
     font-size: 15px;
-    /* font-size: 14px; */
     color: #333;
     text-transform: uppercase;
     width: 100%;
@@ -326,17 +335,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .accordion__item {
     margin-bottom: 10px;
-    border: 2px solid #4c6c96;
+    border: 1px solid #4c6c96;
     border-radius: 10px;
 }
 
 .accordion__item.active .accordion__content {
     display: block;
     animation: showBlock .5s linear forwards;
+    
 }
 
 .accordion__item.active .accordion__header {
     border-bottom-color: #4c6c96;
+    border-radius: 10px 10px 0 0;
 }
 
 .accordion__item.active .accordion__header:after {
@@ -350,8 +361,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 16px;
     height: 16px;
 
-    border-top: 2px solid #4c6c96;
-    border-right: 2px solid #4c6c96;
+    border-top: 1px solid #4c6c96;
+    border-right: 1px solid #4c6c96;
 
     position: absolute;
     top: 50%;
@@ -366,13 +377,9 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 
     font-size: 15px;
-    color: #1b3e6b;
+    color: #072d5e;
     font-style: italic;
-    font-weight: 300;
-
-    background-color: rgb(228, 245, 255);
-
-    border-radius: 10px;
+    font-weight: 400;
 }
 
 @keyframes showBlock {
@@ -387,7 +394,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Map */
 .map {
     width: 100%;
-    margin: 100px 0;
+    margin: 50px 0;
     align-items: center;
     background: url('../img/map-bg.jpg') center no-repeat;
 }
@@ -437,4 +444,19 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #1b3e6b;
 }
 
+/* Footer */
+/* .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    position: relative;    
+    
+    background-color: #4c6c96;
+}
 
+.footer__inner {
+    display: flex;
+    justify-content: space-around;
+} */
