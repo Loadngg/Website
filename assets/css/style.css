@@ -30,8 +30,6 @@ a {
 
 /*Container*/
 .container {
-    /* width: 100%; */
-    /* max-width: 1200px; */
     width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
@@ -41,14 +39,28 @@ a {
 
 /*Header*/
 .header {
+    position: absolute;
     width: 100%;
     padding-top: 15px;
-    position: absolute;
 
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+}
+
+.header.fixed {
+    padding: 5px 0;
+
+    background-color: #4c6c96;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translate3d(0, 0, 0);
 }
 
 .header__inner {
@@ -347,6 +359,7 @@ a {
     align-items: center;
 
     background-color: #eaf3ff;
+    border-radius: 10px;
 }
 
 .accordion__title {
@@ -371,6 +384,8 @@ a {
 
 .accordion__item.active .accordion__header {
     border-bottom-color: #4c6c96;
+    background-color: #eaf3ff;
+
     border-radius: 10px 10px 0 0;
 }
 

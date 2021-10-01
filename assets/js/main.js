@@ -84,3 +84,24 @@ const checkBtn = () => {
 };
 
 checkBtn();
+
+// Sticky header
+let header = document.getElementById('header');
+let introH = document.getElementById('intro').clientHeight;
+let scrollOffset = window.pageYOffset;
+
+checkPos(scrollOffset);
+
+window.onscroll = function () {
+    scrollOffset = window.pageYOffset;
+
+    checkPos(scrollOffset);
+}
+
+function checkPos(scrollOffset) {
+    if (scrollOffset >= introH) {
+        header.classList.add("fixed");
+      } else {
+          header.classList.remove("fixed");
+      }
+}
