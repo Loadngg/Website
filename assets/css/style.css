@@ -23,10 +23,16 @@ p {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    outline: none;
+}
+
 /*Container*/
 .container {
-    width: 100%;
-    max-width: 1200px;
+    /* width: 100%; */
+    /* max-width: 1200px; */
+    width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
     text-align: center;
@@ -180,55 +186,74 @@ p {
 }
 
 
-/* Info */
-.blocks__uptitle {
+/* Slider */
+.slider__uptitle {
     padding-bottom: 10px;
 }
 
-.blocks {
+.slider__track {
     display: flex;
-    justify-content: space-between;
     line-height: 1.3;
+    transition: .2s;
 }
 
-.block {
-    width: 30%;
-    display: inline-block;
-    margin: 0 20px;
+.slider__item {
     background-color: #4c6c96;
     height: auto;
-    text-align: left;
+    text-align: center;
     padding: 20px;
     color: #eaf3ff;
+
+    border: 1px solid #072d5e;
 }
 
-/* Info */
-.info {
-    position: relative;
+.slider__inner {
+    overflow: hidden;
+}
+
+.slider {
     height: auto;
     margin: 40px 0;
 }
 
-.info__title {
+.slider__title {
     font-size: 15px;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
-.info__subtitle {
+.slider__subtitle {
     font-size: 18px;
     font-weight: 300;
     font-style: italic;
 }
 
-.carusel {
+.slider__buttons {
     display: flex;
     justify-content: space-between;
     position: relative;
-    margin: 20px 5px;
-    height: 20px;
-    opacity: .7;
+    margin: 20px 0;
 }
+
+.btn__prev,
+.btn__next {
+    background-color: #d1e3fa;
+    border: none;
+    color: #333;
+    padding: 15px 32px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn__next:disabled,
+.btn__prev:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
 
 /* Photos */
 .photos {
@@ -260,7 +285,7 @@ p {
 
 /* tours */
 .tours {
-    position: relative;
+    position: relbtntive;
     width: 100%;
     height: auto;
     margin-bottom: 60px;
@@ -319,10 +344,9 @@ p {
     border-bottom: 1px solid transparent;
     cursor: pointer;
 
-    /* background-color: #c7daf0; */
-    /* border-radius: 10px; */
-
     align-items: center;
+
+    background-color: #eaf3ff;
 }
 
 .accordion__title {
@@ -406,7 +430,6 @@ p {
 }
 
 .map__ico {
-    /* margin-top: 10px; */
     height: 40px;
     opacity: .5;
 }

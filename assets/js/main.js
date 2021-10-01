@@ -38,3 +38,49 @@ for (let smoothLink of smoothLinks) {
         });
     });
 }
+
+// Slider
+let position = 0;
+const slidesToShow = 3;
+const slidesToScroll = 3;
+const inner = document.querySelector('.slider__inner');
+const track = document.querySelector('.slider__track');
+const btnPrev = document.querySelector('.btn__prev');
+const btnNext = document.querySelector('.btn__next');
+const items = document.querySelectorAll('.slider__item');
+const itemsCount = items.length;
+const itemWidth = inner.clientWidth / slidesToShow;
+const movePosition = slidesToScroll * itemWidth;
+
+items.forEach((item) => {
+    item.style.minWidth = `${itemWidth}px`;
+});
+
+btnNext.addEventListener('click', () => {
+    const itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
+
+    position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+
+    setPosition();
+    checkBtn();
+});
+
+btnPrev.addEventListener('click', () => {
+    const itemsLeft = Math.abs(position) / itemWidth;
+
+    position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+
+    setPosition();
+    checkBtn();
+});
+
+const setPosition = () => {
+    track.style.transform = `translateX(${position}px)`;
+};
+
+const checkBtn = () => {
+    btnPrev.disabled = position === 0;
+    btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
+};
+
+checkBtn();
