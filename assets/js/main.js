@@ -41,23 +41,23 @@ for (let smoothLink of smoothLinks) {
 
 // Slider
 let position = 0;
-const slidesToShow = 3;
-const slidesToScroll = 3;
-const inner = document.querySelector('.slider__inner');
+let slidesToShow = 2;
+const slidesToScroll = 2;
+let inner = document.querySelector('.slider__inner');
 const track = document.querySelector('.slider__track');
 const btnPrev = document.querySelector('.btn__prev');
 const btnNext = document.querySelector('.btn__next');
 const items = document.querySelectorAll('.slider__item');
-const itemsCount = items.length;
-const itemWidth = inner.clientWidth / slidesToShow;
-const movePosition = slidesToScroll * itemWidth;
+let itemsCount = items.length;
+let itemWidth = inner.clientWidth / slidesToShow;
+let movePosition = slidesToScroll * itemWidth;
 
 items.forEach((item) => {
     item.style.minWidth = `${itemWidth}px`;
 });
 
 btnNext.addEventListener('click', () => {
-    const itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
+    let itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
 
     position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
 
@@ -66,7 +66,7 @@ btnNext.addEventListener('click', () => {
 });
 
 btnPrev.addEventListener('click', () => {
-    const itemsLeft = Math.abs(position) / itemWidth;
+    let itemsLeft = Math.abs(position) / itemWidth;
 
     position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
 
@@ -74,11 +74,11 @@ btnPrev.addEventListener('click', () => {
     checkBtn();
 });
 
-const setPosition = () => {
+let setPosition = () => {
     track.style.transform = `translateX(${position}px)`;
 };
 
-const checkBtn = () => {
+let checkBtn = () => {
     btnPrev.disabled = position === 0;
     btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
 };
@@ -104,4 +104,22 @@ function checkPos(scrollOffset) {
       } else {
           header.classList.remove("fixed");
       }
+}
+
+// nav togle
+let navTogle = document.getElementById('nav_toggle');
+let nav = document.getElementById('nav');
+navTogle.onclick = function (event) {
+    event.preventDefault();
+
+    if (this.classList.contains('active')) {
+        this.classList.remove('active');
+        nav.classList.remove('active');
+        header.classList.remove('active');
+    } else {
+        header.classList.add('active');
+        this.classList.add('active');
+        nav.classList.add('active');
+    }
+    
 }

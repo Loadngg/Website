@@ -31,13 +31,17 @@ a {
 
 /*Container*/
 .container {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
     text-align: center;
     height: auto;
 }
 
+.page {
+    overflow: hidden;
+}
 /*Header*/
 .header {
     position: absolute;
@@ -48,6 +52,7 @@ a {
     left: 0;
     right: 0;
     z-index: 1000;
+    transition: background-color .1s linear;
 }
 
 .header.fixed {
@@ -62,6 +67,10 @@ a {
     right: 0;
 
     transform: translate3d(0, 0, 0);
+}
+
+.header.active {
+    background-color: #4c6c96;
 }
 
 .header__inner {
@@ -80,6 +89,83 @@ a {
 .nav {
     font-size: 14px;
     text-transform: uppercase;
+    opacity: .2s;
+}
+
+.nav-toggle {
+    width: 30px;
+    padding: 10px 0;
+    display: none;
+
+    font-size: 0;
+    color: transparent;
+
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 1;
+}
+
+.nav-toggle:focus {
+    outline: 0;
+}
+
+.nav-toggle__item {
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: #fff;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    transition: background .2s linear;
+}
+
+.nav-toggle.active .nav-toggle__item {
+    background: none;
+}
+
+.nav-toggle__item:before,
+.nav-toggle__item:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+
+    background-color: #fff;
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    transition: transform .2s linear;
+}
+
+.nav-toggle__item:before {
+    top: -8px;
+}
+
+.nav-toggle__item:after {
+    bottom: -8px;
+}
+
+.nav-toggle.active .nav-toggle__item:before {
+    transform-origin: left top;
+    transform: rotate(45deg) translate3d(0px, -2px, 0)
+}
+
+.nav-toggle.active .nav-toggle__item:after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translate3d(0px, 3px, 0);
 }
 
 .nav__link {
@@ -134,7 +220,8 @@ a {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    position: relative;    
+    position: relative;  
+    min-height: 820px;  
     
     background: url("../img/Sea.jpg") center no-repeat;
     -webkit-background-size: cover;
@@ -285,6 +372,7 @@ a {
 .tours__photo {
     width: 40%;
     height: 440px;
+    object-fit: cover;
     display: block;
     margin-right: 5px;
     border-radius: 10px;
@@ -412,6 +500,10 @@ a {
     flex: 1 1 0;
 }
 
+.photos__col2 {
+    display: flex;
+}
+
 .photos__item {
     position: relative;
 
@@ -430,6 +522,7 @@ a {
     display: block;
     width: 100%;
     height: 270px;
+    object-fit: cover;
 
     transition: opacity .2s linear;
 }
@@ -576,8 +669,194 @@ a {
     opacity: .7;
 }
 
-.footer__logo {
-    width: 150px;
-    height: auto;
-    margin-right: 10px;
+
+/* Media */
+@media (max-width: 1200px) {
+    .intro__uptitle {
+        font-size: 52px;
+    }
+
+    .intro__title {
+        font-size: 120px;
+    }
+
+    .slider__inner {
+        width: 100%;
+        min-width: 990px;
+    }
+
+    .place__photo {
+        height: 200px;
+    }
+}
+
+@media (max-width: 990px) {
+    .intro__uptitle {
+        font-size: 32px;
+    }
+
+    .intro__title {
+        font-size: 80px;
+    }
+
+
+    /* Header */
+    .header {
+        padding: 10px 0;
+    }
+
+    /* Nav */
+    .nav {
+        display: none;
+        width: 100%;
+        text-align: left;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        background-color: #4c6c96;
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav__link {
+        display: block;
+        margin: 0;
+        padding: 8px 20px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .tours__uptitle {
+        font-size: 19px;
+    }
+
+    .tours__title {
+        font-size: 20px;
+    }
+
+    .tours__text {
+        font-size: 25px;
+    }
+
+    .accordion__title {
+        font-size: 15px;
+    }
+
+    .accordion__content {
+        font-size: 16px;
+    }
+
+    .photos__title {
+        font-size: 12px;
+    }
+
+    .photos__text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 770px) {
+    .intro {
+        min-height: 650px;
+    }
+
+    .header {
+        padding: 10px 0;
+    }
+
+    .tours {
+        /* height: 746px; */
+        display: block;
+        align-items: center;
+    }
+
+    .tours__photo {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .tours__block {
+        /* display: block; */
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .accordion {
+        height: auto;
+        width: 100%;
+    }
+
+    .photos {
+        flex-wrap: wrap;
+    }
+
+    .photos__inner {
+        width: 100%;
+        display: flex;
+        flex-direction: column;  
+    }
+
+    .photos__col {
+        flex: none;
+        width: 50%;
+    }
+
+    .photos__col2 {
+        width: 100%;
+        display: flex;
+    }
+
+    .photos__title {
+        font-size: 10px;
+    }
+
+    .photos__text {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 575px){
+    .intro__uptitle {
+        font-size: 30px;
+    }
+
+    .intro__title {
+        font-size: 50px;
+    }
+
+    .header__logo {
+        font-size: 30px;
+    }
+
+    .btn__prev,
+    .btn__next {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .map__title {
+        font-size: 12px;
+    }
+
+    .footer__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer__text {
+        font-size: 10px;
+    }
+    .footer__tel,
+    .footer__address,
+    .footer__email {
+        font-size: 7px;
+    }
 }
