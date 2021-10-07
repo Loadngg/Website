@@ -39,51 +39,31 @@ for (let smoothLink of smoothLinks) {
     });
 }
 
-// Slider
-let position = 0;
-let slidesToShow = 2;
-const slidesToScroll = 2;
-let inner = document.querySelector('.slider__inner');
-const track = document.querySelector('.slider__track');
-const btnPrev = document.querySelector('.btn__prev');
-const btnNext = document.querySelector('.btn__next');
-const items = document.querySelectorAll('.slider__item');
-let itemsCount = items.length;
-let itemWidth = inner.clientWidth / slidesToShow;
-let movePosition = slidesToScroll * itemWidth;
-
-items.forEach((item) => {
-    item.style.minWidth = `${itemWidth}px`;
+// slick
+$(document).ready(function(){
+	$('.slider').slick({
+		arrows:true,
+		dots:true,
+		slidesToShow:3,
+		autoplay:true,
+		speed:1000,
+		autoplaySpeed:2000,
+		responsive:[
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow:2
+				}
+			},
+			{
+				breakpoint: 550,
+				settings: {
+					slidesToShow:1
+				}
+			}
+		]
+	});
 });
-
-btnNext.addEventListener('click', () => {
-    let itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
-
-    position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
-
-    setPosition();
-    checkBtn();
-});
-
-btnPrev.addEventListener('click', () => {
-    let itemsLeft = Math.abs(position) / itemWidth;
-
-    position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
-
-    setPosition();
-    checkBtn();
-});
-
-let setPosition = () => {
-    track.style.transform = `translateX(${position}px)`;
-};
-
-let checkBtn = () => {
-    btnPrev.disabled = position === 0;
-    btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
-};
-
-checkBtn();
 
 // Sticky header
 let header = document.getElementById('header');
@@ -120,6 +100,5 @@ navTogle.onclick = function (event) {
         header.classList.add('active');
         this.classList.add('active');
         nav.classList.add('active');
-    }
-    
+    }   
 }
