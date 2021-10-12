@@ -394,7 +394,7 @@ a {
 }
 
 .tours__header {
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
 .tours__header::after,
