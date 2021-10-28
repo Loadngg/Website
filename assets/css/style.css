@@ -727,11 +727,11 @@ a {
     .nav {
         display: none;
         width: 100%;
-        text-align: left;
+        text-align: right;
 
         position: absolute;
         top: 100%;
-        left: 0;
+        right: 0;
 
         background-color: #4c6c96;
     }

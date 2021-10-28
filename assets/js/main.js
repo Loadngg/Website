@@ -28,15 +28,15 @@ function change(event) {
 // Nav scroll
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 for (let smoothLink of smoothLinks) {
-    smoothLink.addEventListener('click', function (e) {
-        e.preventDefault();
+    smoothLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        const yOffset = -70;
         const id = smoothLink.getAttribute('href');
+        const element = document.querySelector(id)
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-        document.querySelector(id).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
+        window.scrollTo({top: y, behavior: 'smooth'});
+    })
 }
 
 // slick
@@ -89,6 +89,8 @@ function checkPos(scrollOffset) {
 // nav togle
 let navTogle = document.getElementById('nav_toggle');
 let nav = document.getElementById('nav');
+let navLinks = document.getElementsByClassName('nav__link');
+
 navTogle.onclick = function (event) {
     event.preventDefault();
 
@@ -101,4 +103,12 @@ navTogle.onclick = function (event) {
         this.classList.add('active');
         nav.classList.add('active');
     }   
+}
+
+for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click', function() {
+        navTogle.classList.remove('active');
+        nav.classList.remove('active');
+        header.classList.remove('active');
+    })
 }
