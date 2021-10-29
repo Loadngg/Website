@@ -30,7 +30,7 @@ const smoothLinks = document.querySelectorAll('a[href^="#"]');
 for (let smoothLink of smoothLinks) {
     smoothLink.addEventListener('click', function(event) {
         event.preventDefault();
-        const yOffset = -70;
+        const yOffset = -80;
         const id = smoothLink.getAttribute('href');
         const element = document.querySelector(id)
         const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -67,7 +67,7 @@ $(document).ready(function(){
 
 // Sticky header
 let header = document.getElementById('header');
-let introH = document.getElementById('intro').clientHeight;
+let headerH = header.clientHeight;
 let scrollOffset = window.pageYOffset;
 
 checkPos(scrollOffset);
@@ -79,19 +79,19 @@ window.onscroll = function () {
 }
 
 function checkPos(scrollOffset) {
-    if (scrollOffset >= introH) {
+    if (scrollOffset >= headerH) {
         header.classList.add("fixed");
       } else {
           header.classList.remove("fixed");
       }
 }
 
-// nav togle
-let navTogle = document.getElementById('nav_toggle');
+// nav toggle
+let navToggle = document.getElementById('nav_toggle');
 let nav = document.getElementById('nav');
 let navLinks = document.getElementsByClassName('nav__link');
 
-navTogle.onclick = function (event) {
+navToggle.onclick = function (event) {
     event.preventDefault();
 
     if (this.classList.contains('active')) {
@@ -107,7 +107,7 @@ navTogle.onclick = function (event) {
 
 for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener('click', function() {
-        navTogle.classList.remove('active');
+        navToggle.classList.remove('active');
         nav.classList.remove('active');
         header.classList.remove('active');
     })
