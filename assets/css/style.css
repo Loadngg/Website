@@ -475,6 +475,7 @@ a {
 .slick-list {
 	overflow: hidden;
     border-radius: 20px;
+    -webkit-border-radius: 20px
 }
 .slick-track{
 	display: flex;
