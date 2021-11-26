@@ -1,3 +1,8 @@
+// Scroll Top on reload
+$(window).on('beforeunload', function(){
+    $(window).scrollTop(0);
+});
+
 // Accordion
 let accordion = document.getElementsByClassName('accordion__item');
 
@@ -68,12 +73,12 @@ $(document).ready(function(){
 // Sticky header
 let header = document.getElementById('header');
 let headerH = header.clientHeight;
-let scrollOffset = window.pageYOffset;
+let scrollOffset = window.scrollY;
 
 checkPos(scrollOffset);
 
 window.onscroll = function () {
-    scrollOffset = window.pageYOffset;
+    scrollOffset = window.scrollY;
 
     checkPos(scrollOffset);
 }
@@ -81,9 +86,9 @@ window.onscroll = function () {
 function checkPos(scrollOffset) {
     if (scrollOffset >= headerH) {
         header.classList.add("fixed");
-      } else {
-          header.classList.remove("fixed");
-      }
+    } else {
+        header.classList.remove("fixed");
+    }
 }
 
 // nav toggle
@@ -111,4 +116,44 @@ for (let i = 0; i < navLinks.length; i++) {
         nav.classList.remove('active');
         header.classList.remove('active');
     })
+}
+
+// Animation
+const animItems = document.querySelectorAll('.anim-items');
+
+if (animItems.length > 0) {
+    window.addEventListener('scroll', animOnScroll);
+    function animOnScroll() {
+        for (let index = 0; index < animItems.length; index++) {
+            const animItem = animItems[index];
+            const animItemH = animItem.offsetHeight;
+            const animItemOffset = offset(animItem).top;
+            const animStart = 4;
+
+            let animItemPoint = window.innerHeight - animItemH / animStart;
+            if (animItemH > window.innerHeight) {
+                animItemPoint = window.innerHeight - window.innerHeight / animStart;
+            }
+
+            if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemH)) {
+                animItem.classList.add('show');
+            } else {
+                // animItem.classList.remove('show');
+            }
+        }
+    }
+
+    function offset(el) {
+        const rect = el.getBoundingClientRect(),
+        scrollLeft = window.scrollX || document.documentElement.scrollLeft,
+        scrollTop = window.scrollY || document.documentElement.scrollTop;
+        return {
+            top: rect.top + scrollTop,
+            left: rect.left + scrollLeft
+        }
+    }
+
+    setTimeout(() => {
+        animOnScroll();
+    }, 300) 
 }
