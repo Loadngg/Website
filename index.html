@@ -38,6 +38,7 @@
                 <a href="#slider" class="nav__link">Лучшие Предложения</a>
                 <a href="#photos" class="nav__link">Фотографии</a>
                 <a href="#map" class="nav__link">Мы на карте</a>
+                <a href="#form" class="nav__link">Обратная связь</a>
             </nav>
 
             <button class="nav-toggle" id="nav_toggle" type="button">
@@ -50,7 +51,7 @@
 <!-- Page -->
 <div class="page">
     <!--    Intro-->
-    <div class="intro" id="intro">
+    <section class="intro" id="intro">
         <div class="container">
             <div class="intro__inner anim-items">
                 <h2 class="intro__uptitle">Турагенство</h2>
@@ -60,10 +61,10 @@
 
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Tours -->
-    <div class="tours anim-items" id="tours">
+    <section class="tours anim-items" id="tours">
         <div class="container">
             <div class="tours__header">
                 <h3 class="tours__uptitle">Наши туры</h3>
@@ -116,10 +117,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- SLick slider -->
-    <div class="slider__block anim-items" id="slider">
+    <section class="slider__block anim-items" id="slider">
         <h2 class="slider__uptitle">Лучшие предложения</h2>
         <div class="slider">
             <div class="slider__item">
@@ -155,10 +156,10 @@
                 <div class="slider__subtitle">Атолл включает в себя 63 острова. Считается, что здесь лучший дайвинг на Мальдивах. Также, остров покорит туристов алыми закатами и рассветами.</div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Photos -->
-    <div class="photos" id="photos">
+    <section class="photos" id="photos">
         <div class="photos__inner anim-items">
             <div class="photos__col2">
                 <div class="photos__col">
@@ -229,10 +230,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Map -->
-    <div class="map anim-items" id="map">
+    <section class="map anim-items" id="map">
         <div class="container">
             <div class="map__inner">
                 <a href="https://yandex.ru/maps/-/CCUqYBhc9C" class="map__link">
@@ -241,7 +242,23 @@
                 </a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="form anim-items" id="form">
+        <div class="container">
+            <div class="form__inner">
+                <h1 class="form__title">Остались вопросы по турам?</h1>
+                <h3 class="form__subtitle">Получите консультацию!</h3>
+
+                <div class="form__content">
+                    <input type="text" class="form__name" placeholder="Фамилия и Имя" maxlength="20">
+                    <input type="text" class="form__email" placeholder="Email или телефон" maxlength="30">
+                    <button class="btn form__btn" onclick="window.location.reload()">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>
 
 <!-- Footer -->
