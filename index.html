@@ -37,7 +37,7 @@
                 <a href="#tours" class="nav__link">Туры</a>
                 <a href="#slider" class="nav__link">Лучшие Предложения</a>
                 <a href="#photos" class="nav__link">Фотографии</a>
-                <a href="#map" class="nav__link">Мы на карте</a>
+                <a href="#reviews" class="nav__link">Отзывы</a>
                 <a href="#form" class="nav__link">Обратная связь</a>
             </nav>
 
@@ -89,7 +89,7 @@
                     </div>
                     <div class="accordion__item">
                         <div class="accordion__header">
-                            <img src="assets/svg/caret-up-solid.svg" alt="" class="header__ico">
+                            <img src="assets/svg/caret-up-solid.svg" alt="" class="header__ico header__ico--egypt">
                             <div class="accordion__title">Египет</div>
                         </div>
                         <div class="accordion__content">
@@ -232,18 +232,66 @@
         </div>
     </section>
 
-    <!-- Map -->
-    <section class="map anim-items" id="map">
+    <!-- Reviews slider -->
+    <div class="container">
+        <section class="reviews__block anim-items" id="reviews">
+            <h2 class="reviews__uptitle">Что о нас думают клиенты</h2>
+            <div class="reviews">
+                <div class="reviews__item">
+                    <img src="https://place-hold.it/100" alt="" class="reviews__photo">
+                    <div class="reviews__content">
+                        <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <span class="reviews__name">Lorem Ipsum</span>
+                    </div>
+                </div>
+                <div class="reviews__item">
+                    <img src="https://place-hold.it/100" alt="" class="reviews__photo">
+                    <div class="reviews__content">
+                        <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <span class="reviews__name">Lorem Ipsum</span>
+                    </div>
+                </div>
+                <div class="reviews__item">
+                    <img src="https://place-hold.it/100" alt="" class="reviews__photo">
+                    <div class="reviews__content">
+                        <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <span class="reviews__name">Lorem Ipsum</span>
+                    </div>
+                </div>
+                <div class="reviews__item">
+                    <img src="https://place-hold.it/100" alt="" class="reviews__photo">
+                    <div class="reviews__content">
+                        <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <span class="reviews__name">Lorem Ipsum</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="review__form transparent hidden" id="review__form">
         <div class="container">
-            <div class="map__inner">
-                <a href="https://yandex.ru/maps/-/CCUqYBhc9C" class="map__link">
-                    <img src="assets/svg/map-marked-alt-solid.svg" alt="" class="map__ico">          
-                    <div class="map__title">Мы на карте</div>
-                </a>
+            <div class="reiew__form-inner">
+                <div class="close__btn" onclick="closeForm()"></div>
+                <div class="review__form-content form__content">
+                    <h1 class="review__form-title">Добавить отзыв</h1>
+                    <div class="review__form-headers">
+                        <img src="https://place-hold.it/100" alt="" class="review__form-photo">
+                        <input type="text" class="form__name" placeholder="Пожалуйста, представтесь" maxlength="20">
+                        <input type="text" class="form__email" placeholder="Email (не будет публиковаться)" maxlength="30">
+                    </div>
+                    <textarea type="text" class="review__form-text" placeholder="Оставьте свой отзыв" maxlength="120"></textarea>
+                </div>
+                <button class="btn form__btn" onclick="window.location.reload()">Отправить</button>
             </div>
         </div>
-    </section>
+    </div>
 
+    <div class="make__review transparent hidden" id='make__review'>
+        <button class="form__btn make__review--btn" onclick="showForm()">Оставить отзыв</button>
+    </div>
+
+    <!-- Question form -->
     <section class="form anim-items" id="form">
         <div class="container">
             <div class="form__inner">
@@ -255,6 +303,18 @@
                     <input type="text" class="form__email" placeholder="Email или телефон" maxlength="30">
                     <button class="btn form__btn" onclick="window.location.reload()">Отправить</button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <section class="map anim-items" id="map">
+        <div class="container">
+            <div class="map__inner">
+                <a href="https://yandex.ru/maps/-/CCUqYBhc9C" class="map__link">
+                    <img src="assets/svg/map-marked-alt-solid.svg" alt="" class="map__ico">          
+                    <div class="map__title">Мы на карте</div>
+                </a>
             </div>
         </div>
     </section>

@@ -68,6 +68,24 @@ $(document).ready(function(){
 			}
 		]
 	});
+
+    $('.reviews').slick({
+        arrows:true,
+		dots:true,
+		slidesToShow:2,
+        slidesToScroll:1,
+		autoplay:false,
+		speed:1000,
+		autoplaySpeed:2000,
+        responsive:[
+			{
+				breakpoint: 1060,
+				settings: {
+					slidesToShow:1
+				}
+			}
+		]
+    })
 });
 
 // Sticky header
@@ -156,4 +174,32 @@ if (animItems.length > 0) {
     setTimeout(() => {
         animOnScroll();
     }, 300) 
+}
+
+// Make review
+let makeBtn = document.getElementById('make__review');
+let form = document.getElementById('review__form');
+
+console.log(makeBtn);
+$(window).scroll(function() {
+    if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+        makeBtn.classList.remove('hidden')
+        setTimeout(() => {
+            makeBtn.classList.remove('transparent')
+        }, 200)
+    }
+})
+
+function showForm() {
+    form.classList.remove('hidden')
+    setTimeout(() => {
+        form.classList.remove('transparent')
+    }, 200)
+}
+
+function closeForm() {
+    form.classList.add('transparent')
+    setTimeout(() => {
+        form.classList.add('hidden')
+    }, 200)
 }
