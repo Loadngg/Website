@@ -936,7 +936,7 @@ a {
     transition: all 200ms linear;
 }
 
-.reiew__form-inner {
+.review__form-inner {
     position: relative;
     width: 100%;
     height: 400px;
@@ -1108,6 +1108,18 @@ a {
         flex-direction: column;
         justify-content: space-between;
     }
+
+    .review__form-headers input {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .review__form-inner {
+        height: 550px;
+    }
+    .review__form-photo {
+        margin-bottom: 15px;
+    }
 }
 
 @media (max-width: 770px) {
@@ -1194,6 +1206,10 @@ a {
     .form__btn {
         width: 100%;
     }
+
+    .review__form-inner {
+        padding: 0 15px;
+    }
 }
 
 @media (max-width: 650px){
@@ -1265,6 +1281,11 @@ a {
     .footer__email {
         font-size: 7px;
     }
+
+    .review__form-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 350px) {
@@ -1294,5 +1315,9 @@ a {
 
     .footer__text {
         font-size: 8px;
+    }
+
+    .review__form-title {
+        font-size: 15px;
     }
 }
